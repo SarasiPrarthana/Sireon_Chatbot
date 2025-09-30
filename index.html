@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navi Chatbot</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <!-- Home Screen -->
+  <div class="screen" id="homeScreen">
+    <div class="mascot">🤗</div>
+    <h2>Hi Sarasi👋</h2>
+    <h3>I'm Sara AI👋</h3>
+
+    <div class="card-container">
+      <div class="card" onclick="showFocusArea()">
+        📖 Articles
+        <p>Knowledge Base →</p>
+      </div>
+      <div class="card" onclick="showFocusArea()">
+        🎮 Simulator
+        <p>Start Training →</p>
+      </div>
+    </div>
+
+    <div class="chat-starter">
+      <h4>Start New Chat</h4>
+      <p>Get quick solutions for any parenting problem</p>
+      <button onclick="showChat()">Start New Chat</button>
+    </div>
+  </div>
+
+  <!-- Focus Area Screen -->
+  <div class="screen hidden" id="focusScreen">
+    <button class="back" onclick="showHome()">← Back</button>
+    <div class="mascot">🤗</div>
+    <h3>Select A Focus Area</h3>
+    <p>Select the area to focus on. This will guide your practice in supporting your child’s needs.</p>
+    <div class="focus-list">
+      <button onclick="showChat()">Safety and Attachment</button>
+      <button onclick="showChat()">Autonomy and Competence</button>
+      <button onclick="showChat()">Boundaries and Self-control</button>
+      <button onclick="showChat()">Emotional Expression</button>
+      <button onclick="showChat()">Spontaneity and Play</button>
+    </div>
+  </div>
+
+  <!-- Chat Screen -->
+  <div class="screen hidden" id="chatScreen">
+    <button class="back" onclick="showHome()">← Home</button>
+    <div class="chat-container">
+      <div class="chat-box" id="chatBox"></div>
+      <div class="input-box">
+        <input type="text" id="userInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMessage()">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/index.js"></script>
+</body>
+</html>
